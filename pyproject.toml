@@ -1,0 +1,28 @@
+[project]
+name = "agent-runtime"
+version = "0.1.0"
+description = "A testable coding agent runtime with tool execution and recovery"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=1.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "tests"]
+addopts = "-m \"not live\""
+markers = [
+    "live: real LLM API, skipped unless pytest -m live",
+]

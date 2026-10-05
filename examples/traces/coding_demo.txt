@@ -1,0 +1,50 @@
+Task:
+请修改 hello.py，让 add 函数返回 a + b + 1，并运行测试。
+
+工作区里只有这两个文件：
+- hello.py
+- test_hello.py
+
+测试命令必须使用：
+python -m pytest test_hello.py -q
+
+不要使用 python -m pytest -q，也不要省略测试文件名。
+
+Workspace:
+hello.py
+test_hello.py
+
+Step 1:
+Assistant requested: read_file, read_file
+
+Tool result:
+read_file -> success
+read_file -> success
+
+Step 2:
+Assistant requested: str_replace
+
+Tool result:
+str_replace -> success
+
+Step 3:
+Assistant requested: run_tests
+
+Tool result:
+run_tests -> 1 passed in 0.05s
+
+Final:
+完成。
+
+**修改内容**（`hello.py`）：
+```python
+def add(a, b):
+    return a + b + 1
+```
+
+**测试结果**：使用指定命令 `python -m pytest test_hello.py -q` 运行，输出为 `1 passed in 0.05s`，退出码 0，测试通过。
+
+测试 `test_add` 断言 `hello.add(1, 2) == 4`，修改后返回 `1 + 2 + 1 = 4`，与预期一致。
+
+status: ok
+steps: 4

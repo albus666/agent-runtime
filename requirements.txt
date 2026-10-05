@@ -1,0 +1,4 @@
+pytest
+
+python-dotenv~=1.2.3
+openai~=3.13.0
